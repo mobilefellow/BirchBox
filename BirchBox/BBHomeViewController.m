@@ -6,13 +6,13 @@
 //  Copyright © 2016 Steven. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "BBHomeViewController.h"
 
-@interface ViewController ()
+@interface BBHomeViewController ()
 
 @end
 
-@implementation ViewController
+@implementation BBHomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
