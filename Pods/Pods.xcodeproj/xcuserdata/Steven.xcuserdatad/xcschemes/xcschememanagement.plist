@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DZNEmptyDataSet.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,17 +32,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>388D33F992090AD7D36743DE6F8F09E5</key>
+		<key>0910CE7BD6EE6A5BC34EAC74E66194F8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>19A276A5DD0C9C46CCEBADA524FBF0ED</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>736E57AD5AEFAAF68D47AE4E8FCB8F68</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>928353533005A4198EBDA5B700D37B64</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FA550DA91691EA74298B444ED5C9149E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

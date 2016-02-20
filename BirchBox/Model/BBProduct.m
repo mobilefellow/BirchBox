@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  BBProduct.m
 //  BirchBox
 //
 //  Created by Steven on 2/20/16.
 //  Copyright © 2016 Steven. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BBProduct.h"
 
-@interface BBHomeViewController : UIViewController
-
+@implementation BBProduct
 
 @end
-

@@ -9,10 +9,21 @@
 /* Begin PBXBuildFile section */
 		B05E4B6C1C78E7C600C783F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B05E4B6B1C78E7C600C783F1 /* main.m */; };
 		B05E4B6F1C78E7C600C783F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B05E4B6E1C78E7C600C783F1 /* AppDelegate.m */; };
-		B05E4B721C78E7C600C783F1 /* BBHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B05E4B711C78E7C600C783F1 /* BBHomeViewController.m */; };
 		B05E4B751C78E7C600C783F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B05E4B731C78E7C600C783F1 /* Main.storyboard */; };
 		B05E4B771C78E7C600C783F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B05E4B761C78E7C600C783F1 /* Assets.xcassets */; };
 		B05E4B7A1C78E7C600C783F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B05E4B781C78E7C600C783F1 /* LaunchScreen.storyboard */; };
+		B05E4B871C78F0A600C783F1 /* BBBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B05E4B861C78F0A600C783F1 /* BBBaseViewController.m */; };
+		B05E4B8D1C78F0EE00C783F1 /* BBProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B05E4B8C1C78F0EE00C783F1 /* BBProductViewController.m */; };
+		B05E4B911C78FB2300C783F1 /* BBBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B05E4B901C78FB2300C783F1 /* BBBaseTableViewCell.m */; };
+		B05E4B941C78FB3700C783F1 /* BBImagesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B05E4B931C78FB3700C783F1 /* BBImagesCell.m */; };
+		B05E4B971C78FB4400C783F1 /* BBActionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B05E4B961C78FB4400C783F1 /* BBActionCell.m */; };
+		B05E4B9A1C78FB4F00C783F1 /* BBTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B05E4B991C78FB4F00C783F1 /* BBTextCell.m */; };
+		B05E4B9D1C78FC9F00C783F1 /* BBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B05E4B9C1C78FC9F00C783F1 /* BBManager.m */; };
+		B05E4BA01C78FD1A00C783F1 /* BBProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = B05E4B9F1C78FD1A00C783F1 /* BBProduct.m */; };
+		B05E4BA41C79092F00C783F1 /* BBUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = B05E4BA31C79092F00C783F1 /* BBUtility.m */; };
+		B05E4BA71C79183C00C783F1 /* BBError.m in Sources */ = {isa = PBXBuildFile; fileRef = B05E4BA61C79183C00C783F1 /* BBError.m */; };
+		B05E4BA91C791EC300C783F1 /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B05E4BA81C791EC300C783F1 /* placeholder@2x.png */; };
+		B05E4BB01C7928CB00C783F1 /* BBHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B05E4BAF1C7928CB00C783F1 /* BBHomeViewController.m */; };
 		BE7CD17BCB9B1FD91364728A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E38796C4EB621279DEFC1EE /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -23,12 +34,35 @@
 		B05E4B6B1C78E7C600C783F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B05E4B6D1C78E7C600C783F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B05E4B6E1C78E7C600C783F1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B05E4B701C78E7C600C783F1 /* BBHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBHomeViewController.h; sourceTree = "<group>"; };
-		B05E4B711C78E7C600C783F1 /* BBHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBHomeViewController.m; sourceTree = "<group>"; };
 		B05E4B741C78E7C600C783F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B05E4B761C78E7C600C783F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B05E4B791C78E7C600C783F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B05E4B7B1C78E7C600C783F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B05E4B851C78F0A600C783F1 /* BBBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBaseViewController.h; path = Controller/BBBaseViewController.h; sourceTree = "<group>"; };
+		B05E4B861C78F0A600C783F1 /* BBBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBaseViewController.m; path = Controller/BBBaseViewController.m; sourceTree = "<group>"; };
+		B05E4B8B1C78F0EE00C783F1 /* BBProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBProductViewController.h; path = Controller/BBProductViewController.h; sourceTree = "<group>"; };
+		B05E4B8C1C78F0EE00C783F1 /* BBProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBProductViewController.m; path = Controller/BBProductViewController.m; sourceTree = "<group>"; };
+		B05E4B8E1C78F19400C783F1 /* BBConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BBConstants.h; path = Model/BBConstants.h; sourceTree = "<group>"; };
+		B05E4B8F1C78FB2300C783F1 /* BBBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBaseTableViewCell.h; path = View/BBBaseTableViewCell.h; sourceTree = "<group>"; };
+		B05E4B901C78FB2300C783F1 /* BBBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBaseTableViewCell.m; path = View/BBBaseTableViewCell.m; sourceTree = "<group>"; };
+		B05E4B921C78FB3700C783F1 /* BBImagesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBImagesCell.h; path = View/BBImagesCell.h; sourceTree = "<group>"; };
+		B05E4B931C78FB3700C783F1 /* BBImagesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBImagesCell.m; path = View/BBImagesCell.m; sourceTree = "<group>"; };
+		B05E4B951C78FB4400C783F1 /* BBActionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBActionCell.h; path = View/BBActionCell.h; sourceTree = "<group>"; };
+		B05E4B961C78FB4400C783F1 /* BBActionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBActionCell.m; path = View/BBActionCell.m; sourceTree = "<group>"; };
+		B05E4B981C78FB4F00C783F1 /* BBTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBTextCell.h; path = View/BBTextCell.h; sourceTree = "<group>"; };
+		B05E4B991C78FB4F00C783F1 /* BBTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBTextCell.m; path = View/BBTextCell.m; sourceTree = "<group>"; };
+		B05E4B9B1C78FC9F00C783F1 /* BBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBManager.h; path = Model/BBManager.h; sourceTree = "<group>"; };
+		B05E4B9C1C78FC9F00C783F1 /* BBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBManager.m; path = Model/BBManager.m; sourceTree = "<group>"; };
+		B05E4B9E1C78FD1A00C783F1 /* BBProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBProduct.h; path = Model/BBProduct.h; sourceTree = "<group>"; };
+		B05E4B9F1C78FD1A00C783F1 /* BBProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBProduct.m; path = Model/BBProduct.m; sourceTree = "<group>"; };
+		B05E4BA11C78FDFD00C783F1 /* Birchbox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Birchbox.h; path = Model/Birchbox.h; sourceTree = "<group>"; };
+		B05E4BA21C79092F00C783F1 /* BBUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBUtility.h; path = Model/BBUtility.h; sourceTree = "<group>"; };
+		B05E4BA31C79092F00C783F1 /* BBUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBUtility.m; path = Model/BBUtility.m; sourceTree = "<group>"; };
+		B05E4BA51C79183C00C783F1 /* BBError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBError.h; path = Model/BBError.h; sourceTree = "<group>"; };
+		B05E4BA61C79183C00C783F1 /* BBError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBError.m; path = Model/BBError.m; sourceTree = "<group>"; };
+		B05E4BA81C791EC300C783F1 /* placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder@2x.png"; sourceTree = "<group>"; };
+		B05E4BAE1C7928CB00C783F1 /* BBHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBHomeViewController.h; path = Controller/BBHomeViewController.h; sourceTree = "<group>"; };
+		B05E4BAF1C7928CB00C783F1 /* BBHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBHomeViewController.m; path = Controller/BBHomeViewController.m; sourceTree = "<group>"; };
 		F8B3377F2056EA7ACD2E86E4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +133,7 @@
 		B05E4B6A1C78E7C600C783F1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B05E4BAA1C791EC700C783F1 /* images */,
 				B05E4B6B1C78E7C600C783F1 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -107,8 +142,12 @@
 		B05E4B821C78E80D00C783F1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B05E4B701C78E7C600C783F1 /* BBHomeViewController.h */,
-				B05E4B711C78E7C600C783F1 /* BBHomeViewController.m */,
+				B05E4B851C78F0A600C783F1 /* BBBaseViewController.h */,
+				B05E4B861C78F0A600C783F1 /* BBBaseViewController.m */,
+				B05E4BAE1C7928CB00C783F1 /* BBHomeViewController.h */,
+				B05E4BAF1C7928CB00C783F1 /* BBHomeViewController.m */,
+				B05E4B8B1C78F0EE00C783F1 /* BBProductViewController.h */,
+				B05E4B8C1C78F0EE00C783F1 /* BBProductViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -116,6 +155,16 @@
 		B05E4B831C78E81600C783F1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B05E4BA11C78FDFD00C783F1 /* Birchbox.h */,
+				B05E4B8E1C78F19400C783F1 /* BBConstants.h */,
+				B05E4BA21C79092F00C783F1 /* BBUtility.h */,
+				B05E4BA31C79092F00C783F1 /* BBUtility.m */,
+				B05E4B9B1C78FC9F00C783F1 /* BBManager.h */,
+				B05E4B9C1C78FC9F00C783F1 /* BBManager.m */,
+				B05E4B9E1C78FD1A00C783F1 /* BBProduct.h */,
+				B05E4B9F1C78FD1A00C783F1 /* BBProduct.m */,
+				B05E4BA51C79183C00C783F1 /* BBError.h */,
+				B05E4BA61C79183C00C783F1 /* BBError.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -123,8 +172,24 @@
 		B05E4B841C78E81E00C783F1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B05E4B8F1C78FB2300C783F1 /* BBBaseTableViewCell.h */,
+				B05E4B901C78FB2300C783F1 /* BBBaseTableViewCell.m */,
+				B05E4B921C78FB3700C783F1 /* BBImagesCell.h */,
+				B05E4B931C78FB3700C783F1 /* BBImagesCell.m */,
+				B05E4B951C78FB4400C783F1 /* BBActionCell.h */,
+				B05E4B961C78FB4400C783F1 /* BBActionCell.m */,
+				B05E4B981C78FB4F00C783F1 /* BBTextCell.h */,
+				B05E4B991C78FB4F00C783F1 /* BBTextCell.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		B05E4BAA1C791EC700C783F1 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				B05E4BA81C791EC300C783F1 /* placeholder@2x.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +221,7 @@
 		B05E4B5F1C78E7C500C783F1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = BB;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Steven;
 				TargetAttributes = {
@@ -189,6 +255,7 @@
 			files = (
 				B05E4B7A1C78E7C600C783F1 /* LaunchScreen.storyboard in Resources */,
 				B05E4B771C78E7C600C783F1 /* Assets.xcassets in Resources */,
+				B05E4BA91C791EC300C783F1 /* placeholder@2x.png in Resources */,
 				B05E4B751C78E7C600C783F1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,9 +315,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B05E4B721C78E7C600C783F1 /* BBHomeViewController.m in Sources */,
+				B05E4B8D1C78F0EE00C783F1 /* BBProductViewController.m in Sources */,
+				B05E4BA01C78FD1A00C783F1 /* BBProduct.m in Sources */,
+				B05E4BA41C79092F00C783F1 /* BBUtility.m in Sources */,
 				B05E4B6F1C78E7C600C783F1 /* AppDelegate.m in Sources */,
+				B05E4BA71C79183C00C783F1 /* BBError.m in Sources */,
+				B05E4B941C78FB3700C783F1 /* BBImagesCell.m in Sources */,
+				B05E4B971C78FB4400C783F1 /* BBActionCell.m in Sources */,
+				B05E4B9A1C78FB4F00C783F1 /* BBTextCell.m in Sources */,
 				B05E4B6C1C78E7C600C783F1 /* main.m in Sources */,
+				B05E4BB01C7928CB00C783F1 /* BBHomeViewController.m in Sources */,
+				B05E4B911C78FB2300C783F1 /* BBBaseTableViewCell.m in Sources */,
+				B05E4B871C78F0A600C783F1 /* BBBaseViewController.m in Sources */,
+				B05E4B9D1C78FC9F00C783F1 /* BBManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
