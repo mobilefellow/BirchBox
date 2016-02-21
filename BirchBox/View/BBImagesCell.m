@@ -14,6 +14,7 @@ static NSString *const kCellReuseID = @"ImagesCell";
 @interface BBImagesCell ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *productImageView;
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
 
@@ -37,6 +38,10 @@ static NSString *const kCellReuseID = @"ImagesCell";
     NSURL *url = [NSURL URLWithString:string];
     [self.productImageView setImageWithURL:url
                           placeholderImage:[UIImage imageNamed:@"placeholder"]];
+}
+
+- (void)configureWithPid:(NSString *)pId {
+    self.label.text = pId;
 }
 
 @end

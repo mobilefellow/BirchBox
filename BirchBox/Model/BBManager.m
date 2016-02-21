@@ -37,6 +37,7 @@
             }
         } else {
             BBProduct *product = [[BBProduct alloc]init];
+            product.productId = productId;
             product.name = resultDic[kKeyName];
             product.reviewCount = [resultDic[kKeyReviewCount] unsignedIntegerValue];
             product.productDescription = resultDic[kKeyDescription];

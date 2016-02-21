@@ -12,5 +12,6 @@
 
 + (instancetype)cellWithTableView:(UITableView*)tableView;
 - (void)configureWithImageUrls:(NSArray*)imageUrls;
+- (void)configureWithPid:(NSString*)pId;
 
 @end

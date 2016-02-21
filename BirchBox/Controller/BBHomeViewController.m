@@ -13,7 +13,6 @@
 @interface BBHomeViewController ()<UIPageViewControllerDataSource>
 
 @property (nonatomic, copy) NSArray *productIds;
-@property (nonatomic, strong) NSMutableArray *products;
 @property (strong, nonatomic) UIPageViewController *pageController;
 
 @property (weak, nonatomic) IBOutlet UIView *contentView;
@@ -27,8 +26,8 @@
 
     self.productIds = @[@"11307",
                         @"20953",
-                        @"20060"];
-    self.products = [NSMutableArray array];
+                        @"20060",
+                        @"20061"];
     
     [self configurePageController];
 }
@@ -51,9 +50,26 @@
 }
 
 - (BBProductViewController *)viewControllerAtIndex:(NSUInteger)index {
-    BBProductViewController *childViewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardControllerProduct];
-    [childViewController configureWithProductId:self.productIds[index]];
+    //Use this array to reuse the view controllers
+    static NSMutableArray *array;
+    static const NSUInteger maxLength = 3;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        array = [NSMutableArray array];
+    });
     
+    BBProductViewController *childViewController;
+    
+    if (array.count <= (index % maxLength)) {
+        childViewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardControllerProduct];
+        [array addObject:childViewController];
+    } else {
+        childViewController = array[index % maxLength];
+    }
+
+    [childViewController configureWithProductId:self.productIds[index]];
+
+    NSLog(@"%@", childViewController);
     return childViewController;
     
 }
@@ -66,7 +82,8 @@
     NSUInteger index = [self.productIds indexOfObject:productId];
 
     if (index == 0) {
-        index = self.productIds.count - 1;
+//        index = self.productIds.count - 1;
+        return nil;
     } else {
         index --;
     }
@@ -82,7 +99,8 @@
     NSUInteger index = [self.productIds indexOfObject:productId];
     
     if (index == (self.productIds.count - 1)) {
-        index = 0;
+//        index = 0;
+        return nil;
     } else {
         index ++;
     }

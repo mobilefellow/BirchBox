@@ -45,6 +45,16 @@ DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
     [self configureTableView];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    if ((!self.product && self.productId)
+        || (self.product && ![self.product.productId isEqualToString:self.productId])
+        ) {
+        [self.tableView triggerPullToRefresh];
+    }
+}
+
 #pragma mark - Public Methods
 
 - (void)configureWithProductId:(NSString *)productId {
@@ -72,11 +82,6 @@ DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
     [self.tableView addPullToRefreshWithActionHandler:^{
         [weakSelf fetchAndReloadProductRows];
     }];
-    
-    
-    if (self.product == 0) {
-        [self.tableView triggerPullToRefresh];
-    }
 }
 
 #pragma mark - Fetch And Reload
@@ -163,7 +168,8 @@ DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
     BBImagesCell * cell = [BBImagesCell cellWithTableView:self.tableView];
     
     [cell configureWithImageUrls:self.product.images];
-    
+    [cell configureWithPid:self.product.productId];
+
     return cell;
 }
 

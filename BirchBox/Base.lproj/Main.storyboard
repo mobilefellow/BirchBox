@@ -103,14 +103,23 @@
                                                         <constraint firstAttribute="height" constant="2" id="LFy-K8-7cy"/>
                                                     </constraints>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oik-jN-sBG">
+                                                    <rect key="frame" x="10" y="108" width="180" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="48p-5N-Nek" firstAttribute="top" secondItem="Xz3-5V-Rd3" secondAttribute="bottom" constant="15" id="2di-Fq-LVC"/>
+                                                <constraint firstItem="Xz3-5V-Rd3" firstAttribute="leading" secondItem="oik-jN-sBG" secondAttribute="trailing" constant="10" id="DI7-GM-SGq"/>
                                                 <constraint firstAttribute="bottom" secondItem="48p-5N-Nek" secondAttribute="bottom" id="DWW-is-jrc"/>
                                                 <constraint firstItem="48p-5N-Nek" firstAttribute="leading" secondItem="4B0-F3-mWy" secondAttribute="leading" id="G9t-aD-VAo"/>
                                                 <constraint firstItem="Xz3-5V-Rd3" firstAttribute="top" secondItem="4B0-F3-mWy" secondAttribute="top" constant="20" id="GBI-Zc-Ja2"/>
+                                                <constraint firstItem="oik-jN-sBG" firstAttribute="centerY" secondItem="4B0-F3-mWy" secondAttribute="centerY" id="QTx-Jp-a6h"/>
                                                 <constraint firstItem="48p-5N-Nek" firstAttribute="top" secondItem="Xz3-5V-Rd3" secondAttribute="bottom" constant="15" id="kBy-LV-GDL"/>
                                                 <constraint firstItem="Xz3-5V-Rd3" firstAttribute="centerX" secondItem="4B0-F3-mWy" secondAttribute="centerX" id="mKZ-Zx-JKU"/>
+                                                <constraint firstItem="oik-jN-sBG" firstAttribute="leading" secondItem="4B0-F3-mWy" secondAttribute="leading" constant="10" id="t00-UH-X1Z"/>
                                                 <constraint firstAttribute="trailing" secondItem="48p-5N-Nek" secondAttribute="trailing" id="tGF-5p-Tah"/>
                                             </constraints>
                                             <variation key="default">
@@ -120,6 +129,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="label" destination="oik-jN-sBG" id="MMZ-O6-0c0"/>
                                             <outlet property="productImageView" destination="Xz3-5V-Rd3" id="hD4-wQ-TDd"/>
                                         </connections>
                                     </tableViewCell>
@@ -202,13 +212,13 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Title&gt;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHp-qk-2hC">
                                                     <rect key="frame" x="20" y="30" width="560" height="24"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Body&gt;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kl8-Po-KtF">
                                                     <rect key="frame" x="20" y="69" width="560" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>

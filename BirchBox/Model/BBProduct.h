@@ -12,6 +12,7 @@
 
 @interface BBProduct : NSObject
 
+@property (nonatomic, copy) NSString *productId;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, assign) NSUInteger reviewCount;
 @property (nonatomic, assign) float price;
