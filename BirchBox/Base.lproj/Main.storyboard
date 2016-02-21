@@ -17,8 +17,51 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zFi-cd-EX5" userLabel="NaviView">
+                                <rect key="frame" x="0.0" y="20" width="600" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birchbox" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VhA-RF-5VG">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.48627450979999998" green="0.59215686270000001" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="VhA-RF-5VG" firstAttribute="top" secondItem="zFi-cd-EX5" secondAttribute="top" id="A87-aU-L8V"/>
+                                    <constraint firstAttribute="height" constant="80" id="BWq-vu-FHN"/>
+                                    <constraint firstAttribute="bottom" secondItem="VhA-RF-5VG" secondAttribute="bottom" id="pRd-Kq-uRi"/>
+                                    <constraint firstItem="VhA-RF-5VG" firstAttribute="leading" secondItem="zFi-cd-EX5" secondAttribute="leading" id="u49-Y1-TRg"/>
+                                    <constraint firstAttribute="trailing" secondItem="VhA-RF-5VG" secondAttribute="trailing" id="y8e-Wd-AP8"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vlF-we-z6i">
+                                <rect key="frame" x="0.0" y="100" width="600" height="500"/>
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.62745098040000002" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="zFi-cd-EX5" secondAttribute="trailing" id="0XF-fX-0oq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vlF-we-z6i" secondAttribute="bottom" id="bqp-wR-MaE"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zFi-cd-EX5" secondAttribute="bottom" id="dux-tc-wt3"/>
+                            <constraint firstAttribute="trailing" secondItem="vlF-we-z6i" secondAttribute="trailing" id="ipX-N6-dIv"/>
+                            <constraint firstItem="zFi-cd-EX5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pOv-9i-1Tv"/>
+                            <constraint firstItem="zFi-cd-EX5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="pd1-71-ZbJ"/>
+                            <constraint firstItem="vlF-we-z6i" firstAttribute="top" secondItem="zFi-cd-EX5" secondAttribute="bottom" id="pfV-e6-OVc"/>
+                            <constraint firstItem="vlF-we-z6i" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="poA-Dd-y6m"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dux-tc-wt3"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="contentView" destination="vlF-we-z6i" id="cVd-rY-u1T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -35,27 +78,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uXg-ua-dEb" userLabel="NaviView">
-                                <rect key="frame" x="0.0" y="20" width="600" height="80"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birchbox" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18M-Ra-B0B">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="40"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.48627450980392156" green="0.59215686274509804" blue="0.69019607843137254" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="18M-Ra-B0B" secondAttribute="bottom" id="Dhn-bH-8eT"/>
-                                    <constraint firstItem="18M-Ra-B0B" firstAttribute="top" secondItem="uXg-ua-dEb" secondAttribute="top" id="HcJ-1g-kZe"/>
-                                    <constraint firstAttribute="trailing" secondItem="18M-Ra-B0B" secondAttribute="trailing" id="Lnp-WZ-yoR"/>
-                                    <constraint firstAttribute="height" constant="80" id="Ltk-sF-jiO"/>
-                                    <constraint firstItem="18M-Ra-B0B" firstAttribute="leading" secondItem="uXg-ua-dEb" secondAttribute="leading" id="SjF-qx-L89"/>
-                                </constraints>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nAq-5i-MTF">
-                                <rect key="frame" x="0.0" y="100" width="600" height="500"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImagesCell" rowHeight="237" id="pVs-9X-PKU" customClass="BBImagesCell">
@@ -211,21 +235,16 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.2274509804" green="0.6705882353" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nAq-5i-MTF" firstAttribute="leading" secondItem="27U-BN-F9z" secondAttribute="leading" id="27Z-7T-1uS"/>
-                            <constraint firstItem="uXg-ua-dEb" firstAttribute="leading" secondItem="27U-BN-F9z" secondAttribute="leading" id="4qk-iF-VKg"/>
+                            <constraint firstItem="nAq-5i-MTF" firstAttribute="top" secondItem="HNi-zg-c0O" secondAttribute="bottom" id="57F-Cm-p2Q"/>
                             <constraint firstItem="PUk-1F-TkQ" firstAttribute="top" secondItem="nAq-5i-MTF" secondAttribute="bottom" id="AxH-Be-0o5"/>
-                            <constraint firstAttribute="trailing" secondItem="uXg-ua-dEb" secondAttribute="trailing" id="GqU-26-FTR"/>
-                            <constraint firstItem="uXg-ua-dEb" firstAttribute="top" secondItem="HNi-zg-c0O" secondAttribute="bottom" id="OLc-av-4Xz"/>
                             <constraint firstAttribute="trailing" secondItem="nAq-5i-MTF" secondAttribute="trailing" id="PdO-u5-N1b"/>
-                            <constraint firstItem="nAq-5i-MTF" firstAttribute="top" secondItem="uXg-ua-dEb" secondAttribute="top" id="Ytn-p6-AJO"/>
-                            <constraint firstItem="nAq-5i-MTF" firstAttribute="top" secondItem="uXg-ua-dEb" secondAttribute="bottom" id="kfn-2j-ejq"/>
                             <constraint firstItem="nAq-5i-MTF" firstAttribute="top" secondItem="HNi-zg-c0O" secondAttribute="bottom" id="zOF-Ol-IHQ"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="Ytn-p6-AJO"/>
                                 <exclude reference="zOF-Ol-IHQ"/>
                             </mask>
                         </variation>

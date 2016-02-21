@@ -13,9 +13,11 @@
 @interface BBHomeViewController ()<UIPageViewControllerDataSource>
 
 @property (nonatomic, copy) NSArray *productIds;
+@property (nonatomic, strong) NSMutableArray *products;
 @property (strong, nonatomic) UIPageViewController *pageController;
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
+
 @end
 
 @implementation BBHomeViewController
@@ -26,31 +28,37 @@
     self.productIds = @[@"11307",
                         @"20953",
                         @"20060"];
+    self.products = [NSMutableArray array];
     
+    [self configurePageController];
+}
+
+- (void)configurePageController {
     self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
     self.pageController.dataSource = self;
-    [[self.pageController view] setFrame:[[self view] bounds]];
+    [[self.pageController view] setFrame:[[self contentView] bounds]];
     
     BBProductViewController *initialViewController = [self viewControllerAtIndex:0];
-    
     NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
     
     [self.pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     [self addChildViewController:self.pageController];
-    [[self view] addSubview:[self.pageController view]];
+    [[self contentView] addSubview:[self.pageController view]];
     [self.pageController didMoveToParentViewController:self];
 
 }
+
 - (BBProductViewController *)viewControllerAtIndex:(NSUInteger)index {
-    
     BBProductViewController *childViewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardControllerProduct];
     [childViewController configureWithProductId:self.productIds[index]];
     
     return childViewController;
     
 }
+
+#pragma mark - UIPageViewControllerDataSource
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     
@@ -81,17 +89,5 @@
     
     return [self viewControllerAtIndex:index];
 }
-
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
-    // The number of items reflected in the page indicator.
-    return self.productIds.count;
-}
-
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
-    // The selected item reflected in the page indicator.
-    return 0;
-}
-
-
 
 @end
