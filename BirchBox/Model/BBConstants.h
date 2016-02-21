@@ -41,6 +41,7 @@ static NSString *const kTitleBirchboxBreakdown = @"Birchbox Breakdown";
 static NSString *const kTitleHowToUse = @"How To Use";
 static NSString *const kTitleIngredients = @"Ingredients";
 static NSString *const kTitleBrandName = @"Brand Name";
+static NSString *const kTitleUnknownError = @"Unknow Error";
 
 #pragma mark - Storyboard
 static NSString *const kStoryboardControllerProduct = @"ProductViewController";

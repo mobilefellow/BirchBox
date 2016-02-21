@@ -12,6 +12,7 @@
 #import "BBActionCell.h"
 #import "BBTextCell.h"
 #import <UIScrollView+SVPullToRefresh.h>
+#import <UIScrollView+EmptyDataSet.h>
 
 static NSString *const kCellImages = @"CellImages";
 static NSString *const kCellAction = @"CellAction";
@@ -20,11 +21,14 @@ static NSString *const kCellHowToUse = @"CellHowToUse";
 static NSString *const kCellIngredients = @"CellIngredients";
 static NSString *const kCellBrand = @"CellBrand";
 
-@interface BBProductViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface BBProductViewController ()<
+UITableViewDataSource, UITableViewDelegate,
+DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
 @property(nonatomic, copy) NSArray *rowTypes;
 @property(nonatomic, strong) BBProduct *product;
-@property(nonatomic, strong) BBError *error;
+@property(nonatomic, strong) BBError *productError;
+@property(nonatomic, strong) NSError *networkError;
 
 #pragma mark - IBOutlet
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -61,10 +65,12 @@ static NSString *const kCellBrand = @"CellBrand";
 
 - (void)configureTableView {
     self.tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
-    
+    self.tableView.emptyDataSetDelegate = self;
+    self.tableView.emptyDataSetSource = self;
+
     __weak typeof(self) weakSelf = self;
     [self.tableView addPullToRefreshWithActionHandler:^{
-        [weakSelf fetchAndReloadUserRows];
+        [weakSelf fetchAndReloadProductRows];
     }];
     
     
@@ -79,24 +85,31 @@ static NSString *const kCellBrand = @"CellBrand";
     [self.tableView.pullToRefreshView stopAnimating];
 }
 
-- (void)fetchAndReloadUserRows {
-    self.productId = @"20060";
+- (void)fetchAndReloadProductRows {
     if ([BBUtility isBlankString:self.productId]) {
         return;
     }
 
     BBManager *manager = [BBManager sharedInstance];
     [manager fetchProduct:self.productId withCompletion:^(id object, NSError *error) {
-        [self hideTopLoading];
         if ([object isKindOfClass:[BBProduct class]]) {
             self.product = (BBProduct*)object;
-            self.error = nil;
+            self.productError = nil;
+            self.networkError = nil;
         } else if ([object isKindOfClass:[BBError class]]) {
             self.product = nil;
-            self.error = (BBError*)object;
+            self.productError = (BBError*)object;
+            self.networkError = nil;
+        } else {
+            self.product = nil;
+            self.productError = nil;
+            self.networkError = error;
         }
         
-        [self.tableView reloadData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self hideTopLoading];
+            [self.tableView reloadData];
+        });
     }];
 }
 
@@ -199,25 +212,53 @@ static NSString *const kCellBrand = @"CellBrand";
  *  Show empty row hint only if no data is fetching.
  */
 - (BOOL)emptyDataSetShouldDisplay:(UIScrollView *)scrollView {
-    BOOL shouldDisplay = YES;
+    BOOL shouldDisplay;
+    
+    if (self.productError || self.networkError) {
+        shouldDisplay = YES;
+    } else {
+        shouldDisplay = NO;
+    }
     
     return shouldDisplay;
 }
 
-//- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
-//    NSString *text;
-//    NSDictionary *dic = [PIUtility attributeForStringInEmptyView];
-//    text = kTitleNoUsers;
-//    
-//    return [[NSAttributedString alloc]initWithString:text attributes:dic];
-//}
-//
-//- (void)emptyDataSet:(UIScrollView *)scrollView didTapView:(UIView *)view {
-//    NSAttributedString *str = [self titleForEmptyDataSet:scrollView];
-//    if ([str.string isEqualToString:kTitleNoUsers]) {
-//        [self.tableView triggerInfiniteScrolling];
-//    }
-//}
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
+    NSString *text;
+    
+    if (self.productError) {
+        text = self.productError.title;
+    } else if (self.networkError) {
+        text = kTitleUnknownError;
+    } else {
+        return nil;
+    }
 
+    UIFont *font = [UIFont boldSystemFontOfSize:30];
+    UIColor *textColor = [UIColor darkGrayColor];
+    NSDictionary *dic = @{NSFontAttributeName: font,
+                          NSForegroundColorAttributeName: textColor};
+
+    
+    return [[NSAttributedString alloc]initWithString:text attributes:dic];
+}
+
+- (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView {
+    NSString *text;
+    
+    if (self.productError) {
+        text = self.productError.message;
+    } else {
+        return nil;
+    }
+
+    UIFont *font = [UIFont boldSystemFontOfSize:30];
+    UIColor *textColor = [UIColor darkGrayColor];
+    NSDictionary *dic = @{NSFontAttributeName: font,
+                          NSForegroundColorAttributeName: textColor};
+    
+    
+    return [[NSAttributedString alloc]initWithString:text attributes:dic];
+}
 
 @end
