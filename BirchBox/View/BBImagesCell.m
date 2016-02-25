@@ -41,6 +41,7 @@ static NSString *const kCellReuseID = @"ImagesCell";
 }
 
 - (void)configureWithPid:(NSString *)pId {
+    self.label.hidden = YES;
     self.label.text = pId;
 }
 

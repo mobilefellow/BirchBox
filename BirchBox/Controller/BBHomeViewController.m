@@ -69,7 +69,6 @@
 
     [childViewController configureWithProductId:self.productIds[index]];
 
-    NSLog(@"%@", childViewController);
     return childViewController;
     
 }
