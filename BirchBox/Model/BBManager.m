@@ -24,7 +24,10 @@
     NSString *string = [NSString stringWithFormat:@"%@%@", kValueProductBaseUrl, productId];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.securityPolicy.allowInvalidCertificates = YES;
+    AFSecurityPolicy* policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+    [policy setValidatesDomainName:NO];
+    [policy setAllowInvalidCertificates:NO];
+    manager.securityPolicy = policy;
     
     [manager GET:string parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *resultDic = responseObject;
